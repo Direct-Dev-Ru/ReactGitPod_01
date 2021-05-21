@@ -1,6 +1,8 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
+import SharedSnackbar from '../components/SharedSnackbar';
 
 const SharedSnackbarContext = React.createContext();
 
@@ -40,6 +42,7 @@ export class SharedSnackbarProvider extends Component {
           message: this.state.message,
         }}
       >
+        <SharedSnackbar />
         {children}
       </SharedSnackbarContext.Provider>
     );

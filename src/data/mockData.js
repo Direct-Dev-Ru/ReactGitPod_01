@@ -2,7 +2,7 @@ const mockTodos = (datevar, defaultDaysToDoTask) => {
   return [
     {
       id: 1,
-      title: 'Настройить среду разработки VisualCode',
+      title: 'Настроить среду разработки Visual Studio Code + ESLint',
       completed: false,
       start_date: datevar,
       end_date: new Date(datevar.setDate(datevar.getDate() + defaultDaysToDoTask)),
@@ -12,9 +12,11 @@ const mockTodos = (datevar, defaultDaysToDoTask) => {
       commentField3: '',
       protocol: '',
       subTodos: [],
-      todoExecutor: '',
-      todoControler: '',
+      todoExecutors: [],
+      todoControlers: [],
       todoAuthor: '',
+      dateTimeCreated: '2021-05-21T10:38:51.412Z',
+      dateTimeModified: '2021-05-21T10:38:51.412Z',
     },
     {
       id: 2,
@@ -28,9 +30,12 @@ const mockTodos = (datevar, defaultDaysToDoTask) => {
       commentField3: '',
       protocol: '',
       subTodos: [],
-      todoExecutor: '',
-      todoControler: '',
+      todoExecutors: [],
+      todoControlers: [],
       todoAuthor: '',
+      dateTimeCreated: '2021-05-21T10:38:51.412Z',
+      dateTimeModified: '2021-05-21T10:38:51.412Z',
+
     },
     {
       id: 3,
@@ -44,9 +49,12 @@ const mockTodos = (datevar, defaultDaysToDoTask) => {
       commentField3: '',
       protocol: '',
       subTodos: [],
-      todoExecutor: '',
-      todoControler: '',
+      todoExecutors: [],
+      todoControlers: [],
       todoAuthor: '',
+      dateTimeCreated: '2021-05-21T10:38:51.412Z',
+      dateTimeModified: '2021-05-21T10:38:51.412Z',
+
     },
     {
       id: 4,
@@ -60,9 +68,12 @@ const mockTodos = (datevar, defaultDaysToDoTask) => {
       commentField3: '',
       protocol: '',
       subTodos: [],
-      todoExecutor: '',
-      todoControler: '',
+      todoExecutors: [],
+      todoControlers: [],
       todoAuthor: '',
+      dateTimeCreated: '2021-05-21T10:38:51.412Z',
+      dateTimeModified: '2021-05-21T10:38:51.412Z',
+
     },
   ];
 };

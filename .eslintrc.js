@@ -16,6 +16,7 @@ module.exports = {
   },
   rules: {
     'linebreak-style': 'off', // Неправильно работает в Windows.
+    'react/prop-types': 'off',
     'arrow-parens': 'off', // Несовместимо с prettier
     'object-curly-newline': 'off', // Несовместимо с prettier
     'no-mixed-operators': 'off', // Несовместимо с prettier
