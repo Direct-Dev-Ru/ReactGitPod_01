@@ -1,0 +1,11 @@
+{
+  "Todos": {
+    "apiConfig": {
+      "host": "https://direct-dev.ru/apiTodos",
+      "port": 80
+    },
+    "initVariables": {
+      "defaultDaysForTask": 2
+    }
+  }
+}

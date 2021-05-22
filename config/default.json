@@ -1,0 +1,11 @@
+{
+  "Todos": {
+    "apiConfig": {
+      "host": "https://3000-silver-parakeet-uvgrqdoj.ws-eu07.gitpod.io",
+      "port": 3000
+    },
+    "initVariables": {
+      "defaultDaysForTask": 2
+    }
+  }
+}

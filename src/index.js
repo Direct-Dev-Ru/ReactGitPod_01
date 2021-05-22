@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const title = document.querySelector('title');
+title.innerHTML = process.env.REACT_APP_TITLE;
 ReactDOM.render(
   <>
     <App />
