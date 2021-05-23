@@ -5,9 +5,9 @@
 /* eslint-disable no-labels */
 import React from 'react';
 import TodosList from './TodosList';
-// import mockTodos from '../data/mockData';
 import Header from './Header';
 import todosService from '../services/todosService';
+import AddTodo from './AddTodo';
 
 class TodoContainer extends React.Component {
   // datevar = new Date();
@@ -28,7 +28,6 @@ class TodoContainer extends React.Component {
     todosService
       .getTodos()
       .then((res) => {
-        console.log(res);
         if (res.status === 200) {
           this.setState({
             todos: res.data,
@@ -67,14 +66,24 @@ class TodoContainer extends React.Component {
     }));
   };
 
+  handleDeleted = (id) => {
+    console.log('deleted', id);
+    this.setState((prevState) => {
+      return {
+        todos: [...prevState.todos.filter((todo) => todo.id !== id)],
+      };
+    });
+  };
+
   render() {
     return (
       <div>
+        <AddTodo />
         <Header />
         <TodosList
           todos={this.state.todos}
           isLoading={this.state.isLoading}
-          handlers={{ completed: this.handleCompleted }}
+          handlers={{ completed: this.handleCompleted, deleted: this.handleDeleted }}
         />
       </div>
     );

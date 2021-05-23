@@ -1,8 +1,10 @@
 .App {
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
   /* align-items: center; */
   height: 100vh;
+  min-width: 1200px;
+  
 }
 
 .h1-app {
@@ -31,5 +33,3 @@
 .App-link {
   color: #61dafb;
 }
-
-

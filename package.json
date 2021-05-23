@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "PORT=3006 react-scripts start",
-    "startFakeDb": "node devDbServer",
+    "startDb": "node devDbServer",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

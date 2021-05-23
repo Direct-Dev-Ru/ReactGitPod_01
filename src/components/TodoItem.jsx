@@ -14,6 +14,11 @@ const TodoItem = ({ todo, handlers }) => {
             ${!todo.completed ? 'выполнена' : 'в процессе'}`,
           );
         };
+
+        const onDeleted = () => {
+          handlers.deleted(todo.id);
+        };
+
         return (
           <li key={todo.id} className="li-app">
             <input
@@ -23,6 +28,9 @@ const TodoItem = ({ todo, handlers }) => {
               checked={todo.completed}
               onChange={onCompleted}
             />
+            <button type="button" onClick={onDeleted}>
+              Delete Task
+            </button>
             {todo.title}
           </li>
         );
