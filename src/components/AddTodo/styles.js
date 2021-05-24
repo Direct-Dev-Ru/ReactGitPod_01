@@ -18,8 +18,7 @@ const mt20 = {
   marginTop: '20px',
 };
 
-const useStyles = makeStyles((theme) => ({
-  theme,
+const useStyles = makeStyles(() => ({
   root: {
     ...rootStyle,
     '& input': {},

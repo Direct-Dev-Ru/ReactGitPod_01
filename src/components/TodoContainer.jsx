@@ -1,3 +1,4 @@
+/* eslint-disable react/sort-comp */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable no-console */
@@ -9,7 +10,6 @@ import TodosList from './TodosList';
 import Header from './Header';
 import todosService from '../services/todosService';
 import { AddTodo } from './AddTodo';
-import AddTodoRes from './AddTodoRes';
 
 class TodoContainer extends React.Component {
   // datevar = new Date();
@@ -69,7 +69,7 @@ class TodoContainer extends React.Component {
   };
 
   handleDeleted = (id) => {
-    console.log('deleted', id);
+    // console.log('deleted', id);
     this.setState((prevState) => {
       return {
         todos: [...prevState.todos.filter((todo) => todo.id !== id)],
@@ -77,15 +77,36 @@ class TodoContainer extends React.Component {
     });
   };
 
+  addNewTodo = (newTodo) => {
+    console.log(newTodo);
+    this.setState((prevState) => {
+      let maxId = 0;
+      prevState.todos.forEach((todo) => {
+        if (todo.id > maxId) {
+          maxId = todo.id;
+        }
+      });
+      return {
+        todos: [...prevState.todos, { ...newTodo, id: maxId + 1 }],
+      };
+    });
+  };
+
+  handlers = {
+    completed: this.handleCompleted,
+    deleted: this.handleDeleted,
+    addingNewTodo: this.addNewTodo,
+  };
+
   render() {
     return (
       <div>
-        <AddTodo />
+        <AddTodo handlers={this.handlers} />
         <Header />
         <TodosList
           todos={this.state.todos}
           isLoading={this.state.isLoading}
-          handlers={{ completed: this.handleCompleted, deleted: this.handleDeleted }}
+          handlers={this.handlers}
         />
       </div>
     );

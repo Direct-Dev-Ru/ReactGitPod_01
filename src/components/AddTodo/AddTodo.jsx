@@ -1,3 +1,4 @@
+/* eslint-disable no-bitwise */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component, useState } from 'react';
@@ -5,7 +6,7 @@ import { TextField, FormControl, Button, Typography } from '@material-ui/core';
 import SaveIcon from '@material-ui/icons/Save';
 import useStyles from './styles';
 
-export default function AddTodo(props) {
+export default function AddTodo({ handlers }) {
   const classes = useStyles();
   const [state, setState] = useState({ title: '' });
 
@@ -14,6 +15,37 @@ export default function AddTodo(props) {
       [e.target.name]: e.target.value,
     });
   };
+
+  const onClick = (e) => {
+    let defaultDaysToDoTask = +process.env.REACT_APP_DEFAULT_DAYS_TODO;
+    defaultDaysToDoTask |= 2;
+    const currentDate = new Date();
+    const currentDate2 = new Date();
+    const finishPlanDate = new Date(
+      currentDate2.setDate(currentDate2.getDate() + defaultDaysToDoTask),
+    );
+    const newTodo = {
+      title: state.title,
+      completed: false,
+      completePercent: 0,
+      start_date: currentDate.toLocaleString(),
+      end_date: finishPlanDate.toLocaleString(),
+      description: '',
+      commentField1: '',
+      commentField2: '',
+      commentField3: '',
+      protocol: '',
+      subTodos: [],
+      todoExecutors: ['kolomietsem'],
+      todoControlers: ['kuznetcovay'],
+      userCreated: 'kuznetcovay',
+      userEdited: 'kuznetcovay',
+      dateTimeCreated: currentDate.toLocaleString(),
+      dateTimeModified: currentDate.toLocaleString(),
+    };
+    handlers.addingNewTodo(newTodo);
+  };
+
   return (
     <>
       <Typography variant="h4" gutterBottom className={classes.typography}>
@@ -30,7 +62,13 @@ export default function AddTodo(props) {
           onChange={onChange}
           fullWidth
         />
-        <Button variant="contained" color="primary" size="small" startIcon={<SaveIcon />}>
+        <Button
+          variant="contained"
+          color="primary"
+          size="small"
+          startIcon={<SaveIcon />}
+          onClick={onClick}
+        >
           Save
         </Button>
       </FormControl>
