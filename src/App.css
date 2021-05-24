@@ -4,7 +4,11 @@
   /* align-items: center; */
   height: 100vh;
   min-width: 1200px;
-  
+}
+hr {
+  border: 0 !important;
+  height: 0 !important;
+  box-shadow: 0 0 10px 1px #000000 !important;
 }
 
 .h1-app {

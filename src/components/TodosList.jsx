@@ -9,11 +9,13 @@ class TodosList extends React.Component {
 
   render() {
     return (
-      <ul className="ul-app">
-        {this.props.todos.map((todo) => (
-          <TodoItem key={todo.id} todo={todo} handlers={this.props.handlers} />
-        ))}
-      </ul>
+      <>
+        <ul className="ul-app">
+          {this.props.todos.map((todo) => (
+            <TodoItem key={todo.id} todo={todo} handlers={this.props.handlers} />
+          ))}
+        </ul>
+      </>
     );
   }
 }

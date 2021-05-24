@@ -18,6 +18,9 @@
 .env.test.local
 .env.production.local
 
+/src/data/mockData.js
+db.json
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

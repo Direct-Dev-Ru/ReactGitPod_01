@@ -16,7 +16,6 @@ const Header = () => {
       <Typography variant="h4" gutterBottom className={classes.typography}>
         Список запланированных задач
       </Typography>
-      <hr />
     </>
   );
 };
