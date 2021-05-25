@@ -6,6 +6,7 @@
 /* eslint-disable react/state-in-constructor */
 /* eslint-disable no-labels */
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import TodosList from './TodosList';
 import Header from './Header';
 import todosService from '../services/todosService';
@@ -18,7 +19,6 @@ class TodoContainer extends React.Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
       isLoading: true,
       error: null,
@@ -80,14 +80,8 @@ class TodoContainer extends React.Component {
   addNewTodo = (newTodo) => {
     console.log(newTodo);
     this.setState((prevState) => {
-      let maxId = 0;
-      prevState.todos.forEach((todo) => {
-        if (todo.id > maxId) {
-          maxId = todo.id;
-        }
-      });
       return {
-        todos: [...prevState.todos, { ...newTodo, id: maxId + 1 }],
+        todos: [...prevState.todos, { ...newTodo, id: uuidv4() }],
       };
     });
   };

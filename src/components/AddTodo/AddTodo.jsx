@@ -1,6 +1,7 @@
 /* eslint-disable no-bitwise */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prefer-stateless-function */
+// new Date(Date.parse(strDate))
 import React, { Component, useState } from 'react';
 import { TextField, FormControl, Button, Typography } from '@material-ui/core';
 import SaveIcon from '@material-ui/icons/Save';
@@ -28,20 +29,21 @@ export default function AddTodo({ handlers }) {
       title: state.title,
       completed: false,
       completePercent: 0,
-      start_date: currentDate.toLocaleString(),
-      end_date: finishPlanDate.toLocaleString(),
+      start_date: currentDate.toUTCString(),
+      end_date: finishPlanDate.toUTCString(),
       description: '',
       commentField1: '',
       commentField2: '',
       commentField3: '',
-      protocol: '',
+      protocolExecutors: [],
+      protocolControllers: [],
       subTodos: [],
       todoExecutors: ['kolomietsem'],
       todoControlers: ['kuznetcovay'],
       userCreated: 'kuznetcovay',
-      userEdited: 'kuznetcovay',
-      dateTimeCreated: currentDate.toLocaleString(),
-      dateTimeModified: currentDate.toLocaleString(),
+      userModified: 'kuznetcovay',
+      dateTimeCreated: currentDate.toUTCString(),
+      dateTimeModified: currentDate.toUTCString(),
     };
     handlers.addingNewTodo(newTodo);
   };

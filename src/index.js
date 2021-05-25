@@ -2,14 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { AuthContext, AuthContextComponent } from './context/AuthContext';
 import reportWebVitals from './reportWebVitals';
 
 // const title = document.querySelector('title');
 // title.innerHTML = process.env.REACT_APP_TITLE;
 ReactDOM.render(
-  <>
+  <AuthContextComponent>
     <App />
-  </>,
+  </AuthContextComponent>,
   document.getElementById('root'),
 );
 

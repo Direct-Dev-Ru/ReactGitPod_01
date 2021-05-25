@@ -25,7 +25,8 @@ module.exports = {
     'no-plusplus': 'off',
     'space-before-function-paren': 0, // Несовместимо с prettier
     'max-len': ['error', 100, 2, { ignoreUrls: true }],
-    'no-console': 'error', // airbnb использует предупреждение
+    'no-console': 'off', // airbnb использует предупреждение
+    'no-unused-vars': 'off', // airbnb использует предупреждение
     'no-alert': 'error', // airbnb использует предупреждение
     'no-param-reassign': 'off', // Это - не наш стиль?
     radix: 'off', // parseInt, parseFloat и radix выключены. Мне это не нравится.
@@ -35,7 +36,7 @@ module.exports = {
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
 
     'prefer-destructuring': 'off',
-
+    'react/state-in-constructor': 'off',
     'react/no-find-dom-node': 'off', // Я этого не знаю
     'react/no-did-mount-set-state': 'off',
     'react/no-unused-prop-types': 'off', // Это всё ещё работает нестабильно
