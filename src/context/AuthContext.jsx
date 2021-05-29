@@ -17,10 +17,14 @@ class AuthContextComponent extends Component {
     this.setState((prevState) => ({ ...prevState, isAuth: value }));
   };
 
+  login = () => {
+    this.setAuth(true);
+  };
+
   render() {
     const { children } = this.props;
     return (
-      <AuthProvider value={{ ...this.state, setAuth: this.setAuth }}>
+      <AuthProvider value={{ ...this.state, setAuth: this.setAuth, login: this.login }}>
         {children}
       </AuthProvider>
     );

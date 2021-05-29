@@ -5,6 +5,7 @@ module.exports = {
     node: true,
   },
   extends: ['airbnb', 'plugin:jest/recommended', 'jest-enzyme'],
+  // extends: ['react-app', 'plugin:jest/recommended', 'jest-enzyme'],
   plugins: ['babel', 'import', 'jsx-a11y', 'react', 'prettier'],
   parser: 'babel-eslint',
   parserOptions: {
@@ -41,6 +42,7 @@ module.exports = {
     'react/no-did-mount-set-state': 'off',
     'react/no-unused-prop-types': 'off', // Это всё ещё работает нестабильно
     'react/jsx-one-expression-per-line': 'off',
+    'import/no-unresolved': 'off',
 
     'jsx-a11y/anchor-is-valid': ['error', { components: ['Link'], specialLink: ['to'] }],
     'jsx-a11y/label-has-for': [
