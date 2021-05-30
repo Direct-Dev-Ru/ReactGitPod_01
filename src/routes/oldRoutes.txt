@@ -1,0 +1,23 @@
+{
+  /* <Switch>
+              <Route path="/login">
+                <SignIn />
+              </Route>
+              <Route path="/profile"><Driver id={1} </Route>
+              <Route path="/dashboard"><Dashboard </Route>
+              <Route exact path="/people">
+
+              </Route>
+              <Route path="/people/:driverId"><Driver /> </Route>
+              <Route path="/map"><Trips /></Route>
+              <Route path="/settings">
+
+              </Route>
+              <Route path="/">
+                <Home />
+              </Route>
+              <Route path="**">
+                <Page404 />
+              </Route>
+            </Switch> */
+}

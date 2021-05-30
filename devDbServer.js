@@ -5,18 +5,21 @@ const jsonServer = require('json-server');
 
 const server = jsonServer.create();
 const router = jsonServer.router('db.json');
-const middlewares = jsonServer.defaults();
+const middlewares = jsonServer.defaults({ noCors: true });
 
 server.use(middlewares);
 server.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept',
-  );
+  const origins = [
+    'https://3000-silver-parakeet-uvgrqdoj.ws-eu08.gitpod.io/',
+    'https://www.3000-silver-parakeet-uvgrqdoj.ws-eu08.gitpod.io/',
+  ];
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
+
+  // console.log(res);
   next();
 });
 server.use(router);
-server.listen(3000, () => {
-  console.log('JSON Server is running');
+server.listen(3001, () => {
+  console.log('JSON Server is running on 3001 port');
 });

@@ -3,10 +3,7 @@
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
@@ -65,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
 const SignIn = () => {
   const classes = useStyles();
   const authContext = React.useContext(AuthContext);
-  const [state, setState] = React.useState({ email: '', error: null });
+  const [state, setState] = React.useState({ error: null });
   const { setAuth, isAuth, login } = authContext;
   console.log(authContext);
 
@@ -78,16 +75,7 @@ const SignIn = () => {
   return (
     <Grid container component="main" className={classes.root}>
       <Grid container justify="center" className={classes.image}>
-        <Grid
-          item
-          xs={12}
-          sm={8}
-          md={5}
-          component={Paper}
-          direction="row"
-          elevation={6}
-          square
-        >
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Grid className={classes.paper}>
             <Avatar className={classes.avatar}>
               <LockOutlinedIcon />

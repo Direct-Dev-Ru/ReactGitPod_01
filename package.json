@@ -31,8 +31,9 @@
     "uuid": "^8.3.2",
     "web-vitals": "^1.0.1"
   },
-  "scripts": {    
-    "start": "PORT=3006 craco start",
+  "scripts": {
+    "serve": "concurrently \"yarn startDb\" \"yarn start\" ",
+    "start": "craco start",
     "startDb": "node devDbServer",
     "build": "craco build",
     "test": "craco test",
@@ -42,7 +43,7 @@
     "prettier": "prettier --write src/**/*.js"
   },
   "scriptsBackUp": {
-    "start": "PORT=3006 react-scripts start",    
+    "start": "PORT=3006 react-scripts start",
     "startDb": "node devDbServer",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -76,6 +77,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
+    "concurrently": "^6.2.0",
     "eslint": "^7.26.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-jest-enzyme": "^7.1.2",

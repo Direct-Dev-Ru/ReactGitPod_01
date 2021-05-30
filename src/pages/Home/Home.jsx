@@ -10,6 +10,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import { Link as RouterLink } from 'react-router-dom';
+import { getRouteByName } from '@src/routes/Routes';
+import { AuthContext } from '@context/AuthContext';
 
 function Copyright() {
   return (
@@ -42,6 +44,8 @@ const useStyles = makeStyles((theme) => ({
   card: {
     display: 'flex',
     flexDirection: 'column',
+    minHeight: '450px',
+    maxHeight: '450px',
   },
   cardMedia: {
     paddingTop: '56.25%', // 16:9
@@ -62,26 +66,28 @@ const cards = [
   {
     name: 'Задача настройки почты',
     description: 'Срок выполнения задачи настройки почты скоро истекает !!!',
-    img: 'dedline done task.png',
+    img: 'dontmissdeadline-min.jpg',
     path: '404',
   },
   {
     name: 'Задача настройки АРМ',
     description: 'Срок исполнения задачи настройки АРМ истек !!!',
-    img: 'dedline done task.png',
+    img: 'deadline2.jpg',
     path: '404',
   },
   {
     name: 'Задача сбора сводного отчета',
     description: 'Срок выполнения задачи скоро истекает !!! ',
-    img: 'dedline done task.png',
+    img: 'dontmissdeadline-min.jpg',
     path: '404',
   },
 ];
 
 const Home = () => {
   const classes = useStyles();
-
+  const authContext = React.useContext(AuthContext);
+  const { isAuth, user } = authContext;
+  const buttonLabel = getRouteByName('login');
   return (
     <>
       <main>
@@ -110,7 +116,7 @@ const Home = () => {
                     variant="contained"
                     color="primary"
                   >
-                    Sign In
+                    {buttonLabel.displayName}
                   </Button>
                 </Grid>
               </Grid>
