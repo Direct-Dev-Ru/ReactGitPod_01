@@ -34,7 +34,7 @@ export default function AppBarSimple() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
-  const routesForMenu = getActualNamedRoutes(isAuth, user);
+  const routesForMenu = getActualNamedRoutes(isAuth, user, ['404']);
   console.log(routesForMenu);
   return (
     <div className={classes.root}>

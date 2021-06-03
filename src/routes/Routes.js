@@ -45,13 +45,13 @@ const getRouteByName = (name) => {
   return route;
 };
 
-const getActualNamedRoutes = (isAuth, user) => {
+const getActualNamedRoutes = (isAuth, user, exclude = []) => {
   const actualRoutes = calculateActualRoutes(isAuth, user);
   const actualNamedRoutes = [];
 
   actualRoutes.forEach((route) => {
     // eslint-disable-next-line no-prototype-builtins
-    if (route.hasOwnProperty('name')) {
+    if (route.hasOwnProperty('name') && !exclude.includes(route?.name)) {
       actualNamedRoutes.push({
         name: route.name,
         to: route.url,
@@ -76,7 +76,7 @@ const RouterComponents = ({ isAuth, user }) => {
             key={route.url}
           />
         ))}
-        <Redirect to="/" />
+        <Redirect to="/404" />
       </Switch>
     </>
   );

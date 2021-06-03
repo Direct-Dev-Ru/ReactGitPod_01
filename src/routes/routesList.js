@@ -1,4 +1,4 @@
-import TodoContainer from '@components/TodoContainer';
+import TodoPage from '@pages/Todo/TodoPage';
 import Home from '@pages/Home/Home';
 import SignIn from '@pages/SignIn/SignIn';
 import Page404 from '@pages/Errors/E404';
@@ -35,7 +35,7 @@ const routes = [
     name: 'todos',
     displayName: 'Список задач',
     url: '/todos',
-    component: TodoContainer,
+    component: TodoPage,
     protected: true,
     roles1: ['executor', 'controller', 'admin'],
     roles: ['*'],
@@ -46,8 +46,8 @@ const routes = [
     displayName: 'Page Not Found',
     url: '/404',
     component: Page404,
-    protected: true,
-    roles: ['technical'],
+    protected: false,
+    roles: ['*'],
     exact: true,
   },
   // {
