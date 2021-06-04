@@ -11,7 +11,8 @@ import TodosList from '@components/TodosList';
 import todosService from '@src/services/todosService';
 import { AddTodo } from '@components/AddTodo';
 import Header from '@components/Header';
-import { Container } from '@material-ui/core/';
+import { Container, Typography } from '@material-ui/core/';
+// import DSEraserCyr from './fonts/DS-Eraser-Cyr.ttf';
 import useStyles from './styles';
 // import { TodoContainer } from '@components/TodoContainer';
 
@@ -84,104 +85,23 @@ const TodoPage = () => {
 
   return (
     <>
-      <Container className={classes.cardGrid} maxWidth="xl">
+      <Container maxWidth="lg">
         <AddTodo handlers={handlers} />
-        <Header />
+        <Typography
+          component="h1"
+          variant="h2"
+          align="center"
+          color="textPrimary"
+          gutterBottom
+          style={{ fontFamily: "'Roboto'" }}
+          // style={{ fontFamily: "'dc-eraser-cyr'" }}
+        >
+          Список запланированных задач для исполнения
+        </Typography>
         <TodosList todos={state.todos} isLoading={state.isLoading} handlers={handlers} />
       </Container>
     </>
   );
 };
-
-class TodoPageClass extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: true,
-      error: null,
-      todos: [],
-    };
-  }
-
-  componentDidMount() {
-    todosService
-      .getTodos()
-      .then((res) => {
-        if (res.status === 200) {
-          this.setState({
-            todos: res.data,
-            isLoading: false,
-            error: null,
-          });
-        } else {
-          this.setState({
-            todos: res.data,
-            isLoading: false,
-            error: { message: `Server send ${res.status}` },
-          });
-        }
-      })
-      .catch((err) => {
-        this.setState({
-          todos: [],
-          isLoading: false,
-          error: err,
-        });
-      });
-  }
-
-  handleCompleted = (id) => {
-    this.setState((prevState) => ({
-      todos: prevState.todos.map((todo) => {
-        if (todo.id === id) {
-          return {
-            ...todo,
-            completed: !todo.completed,
-          };
-        }
-
-        return todo;
-      }),
-    }));
-  };
-
-  handleDeleted = (id) => {
-    // console.log('deleted', id);
-    this.setState((prevState) => {
-      return {
-        todos: [...prevState.todos.filter((todo) => todo.id !== id)],
-      };
-    });
-  };
-
-  addNewTodo = (newTodo) => {
-    console.log(newTodo);
-    this.setState((prevState) => {
-      return {
-        todos: [...prevState.todos, { ...newTodo, id: uuidv4() }],
-      };
-    });
-  };
-
-  handlers = {
-    completed: this.handleCompleted,
-    deleted: this.handleDeleted,
-    addingNewTodo: this.addNewTodo,
-  };
-
-  render() {
-    return (
-      <>
-        <AddTodo handlers={this.handlers} />
-        <Header />
-        <TodosList
-          todos={this.state.todos}
-          isLoading={this.state.isLoading}
-          handlers={this.handlers}
-        />
-      </>
-    );
-  }
-}
 
 export default TodoPage;
