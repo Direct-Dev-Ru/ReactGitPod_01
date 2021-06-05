@@ -1,7 +1,7 @@
 /* eslint-disable func-names */
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { getRoutesMap } from '@src/routes/Routes';
+import { getRouteByName } from '@src/routes/Routes';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
@@ -28,15 +28,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ({
-  title = 'Упс! Страница не найдена!',
-  message = 'Сервак говорит, что у него такой страницы нету ...',
+  title = 'Oooooops! Page not found !!!',
+  message = 'Server said, it has no such page ...',
 }) {
   const classes = useStyles();
   return (
     <>
       <Grid container component="main" className={classes.root} direction="row">
         <Grid container justify="center" className={classes.paper} direction="row">
-          <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6}>
+          <Grid item xs={12} sm={8} md={5} component={Paper} elevation={3}>
             <Card className={classes.root}>
               <CardMedia
                 className={classes.media}
@@ -60,7 +60,7 @@ export default function ({
               <CardActions>
                 <Button
                   component={RouterLink}
-                  to="/"
+                  to={getRouteByName('home').url}
                   variant="outlined"
                   color="default"
                   fullWidth

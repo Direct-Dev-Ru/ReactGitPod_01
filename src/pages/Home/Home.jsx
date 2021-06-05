@@ -81,7 +81,7 @@ const Home = () => {
   const buttonLabel = getRouteByName('login');
   return (
     <>
-      <main>
+      <main style={{ backgroundColor: 'lightgrey' }}>
         {/* Hero unit */}
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
@@ -151,18 +151,16 @@ const Home = () => {
 
       {/* Footer */}
       <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          mail to:
-        </Typography>
         <Typography
           variant="subtitle1"
           align="center"
           color="textSecondary"
           component="p"
+          gutterBottom
         >
-          info@direct-dev.ru
+          mail to: info@direct-dev.ru
         </Typography>
-        <Copyright />
+        <Copyright href={'http:\\direct-dev.ru'} webSiteName="direct-dev.ru" />
       </footer>
       {/* End footer */}
     </>

@@ -15,6 +15,9 @@ const defaultTheme = {
   status: {
     danger: 'orange',
   },
+  eraserFont: {
+    fontFamily: 'DS Eraser Cyr',
+  },
 };
 
 export const useTheme = () => {

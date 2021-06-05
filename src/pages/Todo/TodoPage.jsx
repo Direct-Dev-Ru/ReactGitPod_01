@@ -10,11 +10,8 @@ import { v4 as uuidv4 } from 'uuid';
 import TodosList from '@components/TodosList';
 import todosService from '@src/services/todosService';
 import { AddTodo } from '@components/AddTodo';
-import Header from '@components/Header';
 import { Container, Typography } from '@material-ui/core/';
-// import DSEraserCyr from './fonts/DS-Eraser-Cyr.ttf';
 import useStyles from './styles';
-// import { TodoContainer } from '@components/TodoContainer';
 
 const getTodos = (setState) => {
   todosService
@@ -93,10 +90,10 @@ const TodoPage = () => {
           align="center"
           color="textPrimary"
           gutterBottom
-          style={{ fontFamily: "'Roboto'" }}
+          // className={classes.eraserFont}
           // style={{ fontFamily: "'dc-eraser-cyr'" }}
         >
-          Список запланированных задач для исполнения
+          Список задач для исполнения
         </Typography>
         <TodosList todos={state.todos} isLoading={state.isLoading} handlers={handlers} />
       </Container>

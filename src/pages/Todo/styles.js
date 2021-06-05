@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
+const getMainStyles = (theme) => ({
   '@global': {
     ul: {
       margin: 0,
@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     margin: theme.spacing(1, 1.5),
+  },
+  eraserFont: {
+    fontFamily: 'DS Eraser Cyr',
   },
   heroContent: {
     padding: theme.spacing(8, 0, 6),
@@ -44,6 +47,11 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: theme.spacing(6),
     },
   },
+});
+
+const useStyles = makeStyles((theme) => ({
+  ...getMainStyles(theme),
+  ...theme.eraserFont,
 }));
 
 export default useStyles;

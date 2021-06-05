@@ -2,6 +2,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 const AuthContext = React.createContext();
 const AuthProvider = AuthContext.Provider;
@@ -19,6 +20,9 @@ class AuthContextComponent extends Component {
 
   login = () => {
     this.setAuth(true);
+    // eslint-disable-next-line prettier/prettier
+    // eslint-disable-next-line react/jsx-indent
+    <Redirect push to="/todos" />;
   };
 
   render() {

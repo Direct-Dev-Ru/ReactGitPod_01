@@ -12,19 +12,9 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { AuthContext } from '@context/AuthContext';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="http://direct-dev.ru">
-        direct-dev.ru
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import { Copyright } from '@components/Copyright';
+import { Redirect } from 'react-router-dom';
+import { getRouteByName } from '@src/routes/Routes';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -64,7 +54,6 @@ const SignIn = () => {
   const authContext = React.useContext(AuthContext);
   const [state, setState] = React.useState({ error: null });
   const { setAuth, isAuth, login } = authContext;
-  console.log(authContext);
 
   const onChange = (e) => {
     setState({
@@ -138,7 +127,7 @@ const SignIn = () => {
             </form>
           </Grid>
           <Box mt={2}>
-            <Copyright />
+            <Copyright href={'http:\\direct-dev.ru'} webSiteName="direct-dev.ru" />
           </Box>
         </Grid>
       </Grid>
@@ -146,4 +135,14 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default ({ isAuthenticated }) => {
+  const authContext = React.useContext(AuthContext);
+  let { isAuth } = authContext;
+  if (isAuthenticated !== undefined) {
+    isAuth = isAuthenticated;
+  }
+  if (!isAuth) {
+    return <SignIn />;
+  }
+  return <Redirect to={getRouteByName('todos').url} />;
+};
