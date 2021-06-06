@@ -5,9 +5,7 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL:
-    process.env.REACT_APP_API_HOST ||
-    'https://3001-silver-parakeet-uvgrqdoj.ws-eu07.gitpod.io',
+  baseURL: process.env.REACT_APP_API_HOST || 'http://localhost:3001',
   withCredentials: false,
   headers: {
     Accept: 'application/json',

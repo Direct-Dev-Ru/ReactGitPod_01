@@ -31,10 +31,59 @@ const useStyles = makeStyles((theme) => ({
   cardTitle: {
     fontSize: '2rem',
     fontStyle: 'bold',
+    textAlign: 'center',
+    color: theme.palette.primary.dark,
+    '& span': {
+      textDecoration: 'underline',
+    },
+  },
+  cardComplition: {
+    width: '100%',
+    paddingLeft: theme.spacing(10),
+  },
+  cardActions: {
+    fontSize: '1.2rem',
+    fontStyle: 'bold',
+    width: '100%',
+    '& button': {
+      fontSize: '1rem',
+      margin: theme.spacing(2),
+    },
+    '& button.delete': {
+      backgroundColor: theme.palette.error.main,
+      color: theme.palette.error.contrastText,
+    },
+  },
+  cardActionsButtons: {
+    display: 'flex',
+    alignItems: 'center',
+    flexGrow: '2',
+  },
+  datesOfTask: {
+    fontSize: '2rem',
+    fontStyle: 'bold',
+    margin: '0 16px',
+    // color: theme.palette.primary.dark,
   },
   middleDivider: {
-    margin: '10px',
-    width: '50%',
+    margin: '8px',
+    width: '70%',
+    height: '2px',
+  },
+  fullDivider: {
+    margin: '8px',
+    height: '2px',
+  },
+
+  expand: {
+    transform: 'rotate(0deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  expandOpen: {
+    transform: 'rotate(180deg)',
   },
   typography: {},
 }));

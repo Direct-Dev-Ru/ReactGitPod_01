@@ -54,6 +54,11 @@ module.exports = {
       },
     ], // для ошибки вложенных свойств htmlFor элементов label
 
-    'prettier/prettier': ['error'],
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
   },
 };

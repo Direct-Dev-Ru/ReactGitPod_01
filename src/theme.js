@@ -6,8 +6,8 @@ import { blue, blueGrey, teal } from '@material-ui/core/colors';
 export const useTheme = () => {
   const [currentTheme, setCurrentTheme] = useState({
     palette: {
-      primary: blue,
-      secondary: blueGrey,
+      // primary: blue,
+      // secondary: blueGrey,
       background: {
         // default: '#e4f0e2',
         default: '#fafafa',
