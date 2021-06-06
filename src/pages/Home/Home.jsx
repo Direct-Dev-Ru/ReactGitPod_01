@@ -81,7 +81,7 @@ const Home = () => {
   const buttonLabel = getRouteByName('login');
   return (
     <>
-      <main style={{ backgroundColor: 'lightgrey' }}>
+      <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
           <Container maxWidth="sm">

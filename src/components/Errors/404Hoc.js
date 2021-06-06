@@ -45,11 +45,11 @@ function HigherOrderComponent404({
   classes,
 }) {
   const history = useHistory();
-  React.useEffect(() => {
-    setTimeout(() => {
-      history.push(getRouteByName('home').url);
-    }, 10000);
-  });
+  // React.useEffect(() => {
+  //   setTimeout(() => {
+  //     history.push(getRouteByName('home').url);
+  //   }, 10000);
+  // });
 
   return (
     <>

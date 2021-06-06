@@ -7,9 +7,9 @@
 /* eslint-disable no-labels */
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import TodosList from '@components/TodosList';
 import todosService from '@src/services/todosService';
 import { AddTodo } from '@components/AddTodo';
+import { TodosList } from '@components/TodosList';
 import { Container, Typography } from '@material-ui/core/';
 import useStyles from './styles';
 
@@ -93,7 +93,7 @@ const TodoPage = () => {
           // className={classes.eraserFont}
           // style={{ fontFamily: "'dc-eraser-cyr'" }}
         >
-          Список задач для исполнения
+          Tasks to do ...
         </Typography>
         <TodosList todos={state.todos} isLoading={state.isLoading} handlers={handlers} />
       </Container>

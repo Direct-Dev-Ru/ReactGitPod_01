@@ -7,7 +7,7 @@
 /* eslint-disable no-labels */
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import TodosList from './TodosList';
+import TodosList from './TodosList/TodosList';
 import Header from './Header';
 import todosService from '../services/todosService';
 import { AddTodo } from './AddTodo';
