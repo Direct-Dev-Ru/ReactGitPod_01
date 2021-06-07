@@ -1,2 +1,12 @@
 image:
-  file: .gitpod.dockerfile
+  file: .gitpod.Dockerfile
+vscode:
+  extensions:
+    - esbenp.prettier-vscode
+    - dbaeumer.vscode-eslint  
+ports:
+  - port: 3000
+    onOpen: open-preview
+  - port: 3001
+    onOpen: ignore  
+    visibility: public
