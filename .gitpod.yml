@@ -1,12 +1,9 @@
 image:
   file: .gitpod.Dockerfile
-<<<<<<< HEAD
 vscode:
   extensions:
     - esbenp.prettier-vscode
     - dbaeumer.vscode-eslint  
-=======
->>>>>>> 172dc4420b1e134233da0e237ea432679d8f7440
 ports:
   - port: 3000
     onOpen: open-preview
