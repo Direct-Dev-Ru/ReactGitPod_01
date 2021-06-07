@@ -3,7 +3,8 @@ image:
 vscode:
   extensions:
     - esbenp.prettier-vscode
-    - dbaeumer.vscode-eslint  
+    - dbaeumer.vscode-eslint 
+    - mongodb.mongodb-vscode    
 ports:
   - port: 3000
     onOpen: open-preview
