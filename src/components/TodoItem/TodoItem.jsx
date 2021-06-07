@@ -121,6 +121,7 @@ export default function TodoItem({ todo, handlers }) {
             className={classes.cardComplition}
             control={
               <Checkbox
+                disabled
                 checked={todo.completed}
                 onChange={onCompleted}
                 inputProps={{ 'aria-label': 'full completed checkbox' }}

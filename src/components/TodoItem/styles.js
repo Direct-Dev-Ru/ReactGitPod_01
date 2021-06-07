@@ -10,7 +10,12 @@ const useStyles = makeStyles((theme) => ({
     // borderWidth: '1px',
     // borderStyle: 'solid',
     // borderColor: theme.palette.secondary.main,
-    // '& input': {},
+    '& input:disabled': {
+      color: theme.palette.text.primary,
+    },
+    '& label:disabled': {
+      color: theme.palette.text.primary,
+    },
     // '& button': {},
   },
   cardHeader: {
@@ -39,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cardComplition: {
     width: '100%',
-    paddingLeft: theme.spacing(10),
+    paddingLeft: theme.spacing(3),
   },
   cardActions: {
     fontSize: '1.2rem',
